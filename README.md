@@ -1,90 +1,89 @@
-# Organizador de Ficheiros Automático
+# 📂 Organizador de Arquivos Automático
 
-Utilitário simples em **Python** que organiza automaticamente os ficheiros da pasta onde é executado, agrupando-os em subpastas por tipo (Imagens, Documentos e Outros), mantendo o diretório limpo e organizado.
+> Um utilitário simples, rápido e eficiente em Python para manter suas pastas organizadas automaticamente.
+
+![Badge License](https://img.shields.io/badge/license-MIT-green) ![Badge Python](https://img.shields.io/badge/python-3.x-blue)
+
+## 📖 Sobre o Projeto
+
+Este projeto é um script de automação que analisa os arquivos de uma pasta e os organiza automaticamente em subpastas conforme o tipo de arquivo.
+
+É ideal para manter organizadas pastas como **Downloads**, **Área de Trabalho** e **Documentos**.
+
+O programa é **portátil**:
+- Pode ser executado como script Python
+- Ou como executável `.exe` no Windows, sem instalação de dependências pelo usuário final
 
 ## 🚀 Funcionalidades
 
 Ao executar o programa, ele:
 
-- Analisa todos os ficheiros da pasta atual
-- Cria pastas automaticamente
-- Move os ficheiros para as seguintes categorias:
-  - 📂 Imagens_Organizadas (`.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`, etc.)
-  - 📂 Documentos_Organizados (`.pdf`, `.docx`, `.txt`, `.xlsx`, etc.)
-  - 📂 Outros_Arquivos (demais formatos)
+1. Analisa todos os arquivos do diretório atual
+2. Cria automaticamente as pastas:
+   - `Imagens_Organizadas/` — `.jpg`, `.jpeg`, `.png`, `.gif`, `.bmp`
+   - `Documentos_Organizados/` — `.pdf`, `.docx`, `.xlsx`, `.txt`, `.pptx`
+   - `Outros_Arquivos/` — arquivos não identificados
+3. Move os arquivos de forma segura
+4. Ignora o próprio script e o executável para evitar conflitos
 
-O próprio script/executável e pastas existentes são ignorados para evitar erros.
+## 📦 Como Baixar e Usar
 
-## ▶️ Como Usar
+### Opção 1 — Usar o Executável (Recomendado)
 
-### Executar com Python
+1. Vá até a aba **Releases** do repositório
+2. Baixe o arquivo `Organizador.exe`
+3. Coloque o arquivo na pasta que deseja organizar
+4. Execute o arquivo com duplo clique
 
-python organizador.py
+### Opção 2 — Rodar Pelo Código Fonte
 
-### Executar como Executável (Windows)
+Pré-requisito: ter o **Python 3.x** instalado.
 
-1. Coloque o Organizador.exe na pasta desejada  
-2. Dê duplo clique ou execute:
+git clone https://github.com/arthurrisson/organizador-python.git  
+cd organizador-python  
+python organizador.py  
 
-.\Organizador.exe
+## 🛠️ Como Criar o Executável (Build)
 
-## 🛠️ Como Compilar (Build)
+Instale o PyInstaller:
 
-### Pré-requisitos
+pip install pyinstaller  
 
-- Python 3.x instalado  
-- Windows  
-- pip disponível  
+Gere o executável:
 
-### Passo a passo
+python -m PyInstaller --onefile --name "Organizador" organizador.py  
 
-1. Mantenha estes ficheiros na mesma pasta:
-   - organizador.py  
-   - build.bat  
-   - build.ps1  
+O arquivo final será criado em:
 
-2. Execute:
-
-build.bat
-
-3. O script irá:
-   - Verificar o Python  
-   - Instalar o pyinstaller, se necessário  
-   - Criar o executável  
-
-4. O resultado será gerado em:
-
-dist/Organizador.exe
-
-## 📁 Estrutura do Projeto
-
-.
-├── organizador.py  
-├── build.bat  
-├── build.ps1  
-├── Organizador.spec  
-└── dist/  
-    └── Organizador.exe  
+dist/Organizador.exe  
 
 ## ⚠️ Aviso Importante
 
-Não execute o programa em pastas de sistema, como:
+O programa organiza a **pasta onde ele é executado**.
+
+Não utilize em pastas de sistema, como:
 
 C:\Windows  
 C:\Program Files  
 
-Use apenas em pastas pessoais, como:
+Recomendado o uso em:
 
-Transferências  
-Área de Trabalho  
+Downloads  
 Documentos  
+Área de Trabalho  
 
-## 🧩 Personalização
+## 🤝 Contribuição
 
-Para adicionar ou remover tipos de ficheiros, edite o ficheiro organizador.py e ajuste as extensões dentro do dicionário de categorias.
+Você pode contribuir com:
+
+- Fork do projeto
+- Envio de Pull Requests
+- Sugestões de melhorias:
+  - Organização por data
+  - Suporte a músicas e vídeos
+  - Interface gráfica (GUI)
 
 ## 📄 Licença
 
-Este projeto é livre para uso e modificação. Adicione uma licença (por exemplo, MIT) caso publique o projeto.
-
-Feito para ser simples, rápido e útil ✅
+Este projeto está sob a licença MIT.  
+Use, modifique e distribua livremente.
